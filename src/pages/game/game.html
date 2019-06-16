@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-title>Game List</ion-title>
+      <button ion-button icon-only clear (click)="profile()"><ion-icon name="contact"></ion-icon></button>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-card *ngFor="let game of gamelist" class="grid-game"color="primary" col-xl-4 push-xl-4 col-sm-12 (tap)="playGame(game.page,game.timer)" >
+
+    <img src={{game.logo}}/>
+    <ion-card-content>
+      <div class="card-title" color="light">{{game.name}}</div>
+      <div class="card-subtitle" color="light">{{game.guideline}}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

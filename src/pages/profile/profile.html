@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Your profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card color="light">
+    <ion-label>Change your username</ion-label>
+    <ion-input type="text" [value]="save.player.name" (input)="setName($event.target.value)"></ion-input>
+  </ion-card>
+
+
+      <ion-list>
+        <ion-grid>
+          <ion-card *ngFor="let avatar of avatarList" class="grid-avatar"color="light" col-xl-4 push-xl-4 col-sm-12>
+              <div *ngIf="isUnlocked(avatar.image); then thenBlock else elseBlock"></div>
+
+              <ng-template #thenBlock>
+                <ion-row>
+                  <ion-avatar col-3>
+                    <img src="{{avatar.image}}"/>
+                  </ion-avatar>
+                  <button col-3 push-6 ion-button [small] (tap)="selectAvatar(avatar.image) " >Select</button>
+                </ion-row>
+              </ng-template>
+
+              <ng-template #elseBlock>
+                <ion-row>
+                  <ion-avatar col-3>
+                    <img src="{{avatar.image}}"/>
+                  </ion-avatar>
+                  <button col-3 push-6 ion-button [small] (tap)="buyAvatar(avatar)">Buy it</button>
+                </ion-row>
+                <ion-row>
+                  <ion-badge >Cost : {{avatar.cost}}</ion-badge>
+                </ion-row>
+              </ng-template>
+        </ion-card>
+        </ion-grid>
+      </ion-list>
+</ion-content>
+
+
