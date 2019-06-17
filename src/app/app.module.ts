@@ -7,7 +7,6 @@ import {AboutPage} from '../pages/about/about';
 import {HomePage} from '../pages/home/home';
 import {GamePage} from '../pages/game/game';
 import {TabsPage} from '../pages/tabs/tabs';
-
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpClientModule} from "@angular/common/http";
@@ -16,6 +15,12 @@ import {ProfilePage} from "../pages/profile/profile";
 import {NativeStorage} from "@ionic-native/native-storage";
 import {SettingsPage} from "../pages/settings/settings";
 import {LocalNotifications} from "@ionic-native/local-notifications";
+import {AdMobPro} from "@ionic-native/admob-pro";
+import {NotificationProvider} from "../providers/notification";
+import {AddProvider} from "../providers/add";
+
+
+
 
 @NgModule({
   declarations: [
@@ -47,8 +52,11 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
     SplashScreen,
     NativeStorage,
     LocalNotifications,
+    AdMobPro,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SaveProvider
+    SaveProvider,
+    NotificationProvider,
+    AddProvider,
   ]
 })
 export class AppModule {}

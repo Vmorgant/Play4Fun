@@ -4,7 +4,7 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
 @Injectable()
 export class NotificationProvider {
 
-  constructor(public http: HttpClient, private localNotifications: LocalNotifications) {
+  constructor(public http: HttpClient, public localNotifications: LocalNotifications) {
     this.localNotifications.schedule([
       {
         id : 1,
@@ -14,6 +14,10 @@ export class NotificationProvider {
           every: { hour: 0}
         },
       },
+        {
+          id :2,
+          text: 'TEST'
+        },
     ]
     );
   }

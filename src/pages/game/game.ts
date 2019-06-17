@@ -22,18 +22,18 @@ export class GamePage {
   }
 
   playGame(name,timeLimit){
-    //if(this.save.player.keys > 0){
-      //this.save.player.keys--;
-      //this.save.saveProfile();
+    if(this.save.player.keys > 0){
+      this.save.player.keys--;
+      this.save.saveProfile();
       this.navCtrl.push(name,{timeLimit :timeLimit});
-    /*}
+    }
     else{
       const alert = this.alertCtrl.create({
-        subTitle: 'You don\'t have enough keys to do that. Try again later.',
+        message: 'You don\'t have enough keys to do that. Try again later.',
         buttons: ['OK']
       });
       alert.present();
-    }*/
+    }
 
   }
   profile(){

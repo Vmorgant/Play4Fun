@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
-import {putTabBar, removeTabBar, wait} from "../../model/tool";
+import {putTabBar, removeTabBar} from "../../model/tool";
 import {Observable} from "rxjs";
 import {SaveProvider} from "../../providers/save";
 

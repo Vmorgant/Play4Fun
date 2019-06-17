@@ -24,7 +24,7 @@
                   <ion-avatar col-3>
                     <img src="{{avatar.image}}"/>
                   </ion-avatar>
-                  <button col-3 push-6 ion-button [small] (tap)="selectAvatar(avatar.image) " >Select</button>
+                  <button *ngIf="avatar.image!= this.save.player.currentAvatar " col-3 push-6 ion-button [small] (tap)="selectAvatar(avatar.image) " >Select</button>
                 </ion-row>
               </ng-template>
 

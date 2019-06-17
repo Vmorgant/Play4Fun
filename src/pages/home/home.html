@@ -11,8 +11,8 @@
 <ion-content>
   <ion-grid style="height: 100%">
     <ion-row>
-      <button ion-button>Keys : {{save.player.keys}} <ion-icon name="add-circle"></ion-icon></button>
-      <button ion-button push-4>Gems : {{save.player.gems}}<ion-icon name="add-circle"></ion-icon></button>
+      <button ion-button (click)="addKeys()">Keys : {{save.player.keys}} <ion-icon name="add-circle"></ion-icon></button>
+      <button ion-button push-4 (click)="addGems()">Gems : {{save.player.gems}}<ion-icon name="add-circle"></ion-icon></button>
     </ion-row >
 
     <ion-row >
